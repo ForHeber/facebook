@@ -10,21 +10,6 @@ use Socialite;
 
 class SocialAuthController extends Controller
 {
-  // public function redirect()
-  // {
-  //     return Socialite::driver('facebook')->redirect();
-  // }
-
-  // public function callback(SocialAccountService $service)
-  //    {
-  //        $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
-  //
-  //        auth()->login($user);
-  //
-  //        return redirect()->to('/home');
-  //    }
-  //
-  //
   public function redirect($provider)
 {
     return Socialite::driver($provider)->redirect();
@@ -40,17 +25,5 @@ class SocialAuthController extends Controller
 
     return redirect()->to('/home');
 }
-    //  public function redirectg()
-    //  {
-    //      return Socialite::driver('google')->redirect();
-    //  }
-     //
-    //  public function callbackg(SocialAccountService $service)
-    //     {
-    //         $user = $service->createOrGetUser(Socialite::driver('google')->user());
-     //
-    //         auth()->login($user);
-     //
-    //         return redirect()->to('/home');
-    //     }
+
 }

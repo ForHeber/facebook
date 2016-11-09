@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -66,6 +68,63 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('fecha') ? ' has-error' : '' }}">
+                            <label for="date" class="col-md-4 control-label">Fecha de nacimiento</label>
+
+                            <div class="col-md-6">
+                                <input id ="fecha" type="text" class="form-control datepicker" name="fecha">
+                                @if ($errors->has('fecha'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('fecha') }}</strong>
+                                    </span>
+                                @endif
+                            </div><span class="glyphicon glyphicon-th"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date" class="col-md-4 control-label">Genero</label>
+
+                            <div class="col-md-6">
+                              <label class="radio-inline">
+                                <input type="radio" name="genero" id="genero" value="M"> Hombre
+                              </label>
+                              <label class="radio-inline">
+                                <input type="radio" name="genero" id="genero" value="F"> Mujer
+                              </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date" class="col-md-4 control-label">Sobre mi</label>
+
+                            <div class="col-md-6">
+                                <textarea name="sobremi" cols="50" rows="10"></textarea>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date" class="col-md-4 control-label">País</label>
+
+                            <div class="col-md-6">
+                              <select name="parentProj">
+                                {{-- @foreach($projects as $project) --}}
+                                 {{-- <option value="{{ $project->id }}">{{ $project->projectName}}</option> --}}
+                                {{-- @endforeach --}}
+                              </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a href="redirect/facebook" class="btn btn-block btn-social btn-facebook"><span class="fa fa-facebook"></span>Facebook</a>
+                                <a href="redirect/google"class="btn btn-block btn-social btn-google"><span class="fa fa-google"></span>Google+</a>
+                                <a href="redirect/twitter"class="btn btn-block btn-social btn-twitter"><span class="fa fa-twitter"></span>Twitter</a>
+                                {{-- <a href="redirect/linkedin"class="btn btn-block btn-social btn-linkedin"><span class="fa fa-linkedin"></span>Google+</a> --}}
+                                {{-- <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a> --}}
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -73,10 +132,18 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$('.datepicker').datepicker({
+ format: "dd-mm-yyyy",
+ language: "es",
+ autoclose: true
+});
+</script>
 @endsection

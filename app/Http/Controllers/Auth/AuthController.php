@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use DateTime;
+
 class AuthController extends Controller
 {
     /*
@@ -52,6 +54,9 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'fecha' => 'required',
+            'genero' => 'required',
+            'sobremi'=> 'required',
         ]);
     }
 
@@ -63,10 +68,15 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+      $time = new DateTime($data['fecha']);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'fecha'=> $time->format('Y-m-d'),
+            'genero'=> $data['genero'],
+            'sobremi' => $data['sobremi'],
         ]);
     }
 }

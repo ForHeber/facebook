@@ -56,8 +56,8 @@
                                 </button>
                                 <a href="redirect/facebook" class="btn btn-block btn-social btn-facebook"><span class="fa fa-facebook"></span>Facebook</a>
                                 <a href="redirect/google"class="btn btn-block btn-social btn-google"><span class="fa fa-google"></span>Google+</a>
-                                <a href="redirect/twitter"class="btn btn-block btn-social btn-twitter"><span class="fa fa-twitter"></span>Google+</a>
-                                <a href="redirect/linkedin"class="btn btn-block btn-social btn-linkedin"><span class="fa fa-linkedin"></span>Google+</a>
+                                <a href="redirect/twitter"class="btn btn-block btn-social btn-twitter"><span class="fa fa-twitter"></span>Twitter</a>
+                                {{-- <a href="redirect/linkedin"class="btn btn-block btn-social btn-linkedin"><span class="fa fa-linkedin"></span>Google+</a> --}}
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                             </div>
                         </div>

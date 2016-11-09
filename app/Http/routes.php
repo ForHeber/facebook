@@ -12,6 +12,20 @@
 */
 //Route::get('/redirect', 'SocialAuthController@redirect');
 //Route::get('/callback', 'SocialAuthController@callback');
+
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+   {
+       /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+       Route::get('/', function()
+       {
+           return View::make('hello');
+       });
+
+       Route::get('test',function(){
+           return View::make('test');
+       });
+   });
+
 Route::get('/redirect/{provider}', 'SocialAuthController@redirect');
 Route::get('/callback/{provider}', 'SocialAuthController@callback');
 
@@ -22,3 +36,5 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('post', 'PostController');

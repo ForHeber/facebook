@@ -47,8 +47,8 @@ return [
     'redirect' => 'http://localhost:8000/callback/google',
 ],
 'twitter' => [
-    'client_id' => 'your-github-app-id',
-    'client_secret' => 'your-github-app-secret',
+    'client_id' => 'LeaQFJTnvEUZjwXCGmYFimM24',
+    'client_secret' => '6qScOFa0zQabX2WqhY1ilpwxsQBhTlto2vy1dKRHckyLFjyN9o',
     'redirect' => 'http://localhost:8000/callback/twitter',
 ],
 'linkedin' => [
